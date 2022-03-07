@@ -7,7 +7,9 @@ namespace AlgorithmProblems
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("permutations of a String");
+            Console.WriteLine("algorithm problems");
+            StringPermutation stringPermutation = new StringPermutation();
+            stringPermutation.UserInput();
         }
     }
 }
