@@ -8,8 +8,8 @@ namespace AlgorithmProblems
         static void Main(string[] args)
         {
             Console.WriteLine("algorithm problems");
-            StringPermutation stringPermutation = new StringPermutation();
-            stringPermutation.UserInput();
+            WordList wordList = new WordList();
+            wordList.UserInput();
         }
     }
 }
