@@ -8,8 +8,8 @@ namespace AlgorithmProblems
         static void Main(string[] args)
         {
             Console.WriteLine("algorithm problems");
-            BubbleSort bubbleSort = new BubbleSort();
-            bubbleSort.UserInput();
+           MergeSort mergeSort = new MergeSort();
+            mergeSort.UserInput();
         }
     }
 }
