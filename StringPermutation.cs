@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgorithmProblems
 {
-    internal class StringPermutation
+    public class StringPermutation
     {
         public void UserInput()
         {
