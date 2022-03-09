@@ -8,23 +8,23 @@ namespace AlgorithmProblems
 {
     internal class MergeSort
     {
-        public void UserInput()
+        public void UserInput <T> ()
         {
             string GivenString = "Mango Coconut Pineapple Apple Banana Papaya Cherry Watermelon Orange Grapes";
             string[] SplitString = GivenString.Split(" ");
             Console.Write("given string : ");
-            Display(SplitString);
+            Display<string>(SplitString);
             string[] SortedString = Sort(SplitString, 0, SplitString.Length - 1);
             Console.Write("\n sorted string: ");
             Display(SortedString);
         }
 
-        public static void Merge(string[] GivenString, int l, int m, int r)
+        public static void Merge <T> (T[] GivenString, int l, int m, int r)
         {
             int n1 = m - l + 1;
             int n2 = r - m;
-            string[] left = new string[n1];
-            string[] right = new string[n2];
+            T[] left = new T[n1];
+            T[] right = new T[n2];
             int i, j;
             for (i = 0; i < n1; ++i)
             {
@@ -40,7 +40,8 @@ namespace AlgorithmProblems
             int k = l;
             while (i < n1 && j < n2)
             {
-                if (left[i].CompareTo(right[j]) <= 0)
+                if (Comparer<T>.Default.Compare(left[i], right[j]) <= 0)
+
                 {
                     GivenString[k] = left[i];
                     i++;
@@ -65,7 +66,7 @@ namespace AlgorithmProblems
                 k++;
             }
         }
-        public static string[] Sort(string[] GivenString, int l, int r)
+        public static T[] Sort <T> (T[] GivenString, int l, int r)
         {
             if (l < r)
             {
@@ -77,9 +78,9 @@ namespace AlgorithmProblems
             return GivenString;
         }
 
-        public static void Display(string[] GivenString)
+        public static void Display <T> (T[] GivenString)
         {
-            foreach (string Strings in GivenString)
+            foreach (T Strings in GivenString)
             {
                 Console.Write(Strings + " ");
             }

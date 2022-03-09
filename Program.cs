@@ -8,8 +8,12 @@ namespace AlgorithmProblems
         static void Main(string[] args)
         {
             Console.WriteLine("algorithm problems");
-            PrimeInRange primeInRange = new PrimeInRange();
-            primeInRange.UserInput();
+
+            BubbleSort bubbleSort = new BubbleSort();
+            bubbleSort.UserInput<string>();
+
+            WordList wordList = new WordList();
+            wordList.UserInput<string>();
         }
     }
 }

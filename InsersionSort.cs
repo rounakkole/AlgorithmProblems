@@ -8,7 +8,7 @@ namespace AlgorithmProblems
 {
     internal class InsersionSort
     {
-        public void UserInput()
+        public void UserInput<T>()
         {
             string GivenString = "Mango Coconut Pineapple Apple Banana Papaya Cherry Watermelon Orange Grapes";
             string[] SplitString = GivenString.Split(" ");
@@ -16,14 +16,14 @@ namespace AlgorithmProblems
             Display(SplitString);
             InsersionSorting(SplitString);
         }
-        public static void InsersionSorting(string[] GivenString)
+        public static void InsersionSorting <T> (T[] GivenString)
         {
             for (int i = 1; i < GivenString.Length; i++)
             {
-                string temp = GivenString[i];
+                T temp = GivenString[i];
                 for (int j = i - 1; j >= 0; j--)
                 {
-                    if (GivenString[j].CompareTo(temp) > 0)
+                    if (Comparer<T>.Default.Compare(GivenString[j], temp) > 0)
                     {
                         GivenString[j + 1] = GivenString[j];
                         GivenString[j] = temp;
@@ -34,9 +34,9 @@ namespace AlgorithmProblems
             Display(GivenString);
         }
 
-        public static void Display(string[] GivenString)
+        public static void Display <T> (T[] GivenString)
         {
-            foreach (string Strings in GivenString)
+            foreach (T Strings in GivenString)
             {
                 Console.Write(Strings + " ");
             }
